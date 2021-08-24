@@ -1,0 +1,34 @@
+linter:
+  rules:
+    - always_declare_return_types
+    - always_put_control_body_on_new_line
+    - always_put_required_named_parameters_first
+    - always_require_non_null_named_parameters
+    - avoid_field_initializers_in_const_classes
+    - constant_identifier_names
+    - non_constant_identifier_names
+    - prefer_const_constructors
+    - prefer_const_constructors_in_immutables
+    - prefer_const_declarations
+    - prefer_const_literals_to_create_immutables
+    - prefer_constructors_over_static_methods
+    - unnecessary_this
+    - unnecessary_lambdas
+    - unnecessary_new
+    - unnecessary_null_aware_assignments
+    - unnecessary_parenthesis
+    - avoid_print
+    - avoid_unnecessary_containers
+    - use_raw_strings
+    - use_named_constants
+    - unnecessary_string_interpolations
+    - unnecessary_string_escapes
+    - unnecessary_raw_strings
+    - unnecessary_final
+    - unnecessary_await_in_return
+    - empty_catches
+    - camel_case_types
+    - avoid_empty_else
+    - await_only_futures
+    - avoid_relative_lib_imports
+    - avoid_returning_null_for_future
