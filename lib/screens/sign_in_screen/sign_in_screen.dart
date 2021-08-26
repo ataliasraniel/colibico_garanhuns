@@ -13,61 +13,51 @@ class _SignInScreenState extends State<SignInScreen> {
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Container(
-        margin: const EdgeInsets.only(top: 84),
-        decoration: const BoxDecoration(
-            color: kForegroundColor,
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(kDefaultPadding),
-                topRight: Radius.circular(kDefaultPadding))),
-        child: Column(
-          children: [
-            Expanded(
-              flex: 5,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: kDefaultPadding, vertical: kDefaultPadding),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    RichText(
-                        text: const TextSpan(children: [
-                      TextSpan(text: 'Bem-vindo. ', style: kBigHeading),
-                      TextSpan(text: 'Faça ', style: kBigHeading),
-                      TextSpan(
-                          text: 'login ',
-                          style: TextStyle(
-                              color: kPurpleColor,
-                              fontSize: 48,
-                              fontFamily: 'Montserrat',
-                              fontWeight: FontWeight.bold)),
-                      TextSpan(text: 'para continuar', style: kBigHeading)
-                    ])),
-                    TextFormField(
-                        decoration: kFormStyle(
-                            'E-mail', 'Seu e-mail', Icons.mail_outline)),
-                    TextFormField(
-                        decoration: kFormStyle(
-                            'Senha', 'Sua senha', Icons.lock_outline)),
-                    SizedBox(
-                      height: kDefaultPadding * 1.5,
-                      width: _size.width,
-                      child: KGeneralBtn(
-                        text: 'Entrar',
-                        func: () {},
-                      ),
-                    ),
-                    KThinTextBtn(text: 'Esqueceu a senha?', func: () {}),
-                    Center(
-                        child:
-                            KGeneralTextBtn(text: 'Cadastre-se', func: () {}))
-                  ],
+      appBar: AppBar(),
+      backgroundColor: kForegroundColor,
+      body: Center(
+        child: Container(
+          height: _size.height / 1.3,
+          color: kForegroundColor,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+                horizontal: kDefaultPadding, vertical: kDefaultPadding),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                RichText(
+                    text: const TextSpan(children: [
+                  TextSpan(text: 'Bem-vindo. ', style: kBigHeading),
+                  TextSpan(text: 'Faça ', style: kBigHeading),
+                  TextSpan(
+                      text: 'login ',
+                      style: TextStyle(
+                          color: kPurpleColor,
+                          fontSize: 48,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.bold)),
+                  TextSpan(text: 'para continuar', style: kBigHeading)
+                ])),
+                TextFormField(
+                    decoration:
+                        kFormStyle('E-mail', 'Seu e-mail', Icons.mail_outline)),
+                TextFormField(
+                    decoration:
+                        kFormStyle('Senha', 'Sua senha', Icons.lock_outline)),
+                SizedBox(
+                  height: kDefaultPadding * 1.5,
+                  width: _size.width,
+                  child: KGeneralBtn(
+                    text: 'Entrar',
+                    func: () {},
+                  ),
                 ),
-              ),
+                KThinTextBtn(text: 'Esqueceu a senha?', func: () {}),
+                Center(child: KGeneralTextBtn(text: 'Cadastre-se', func: () {}))
+              ],
             ),
-            const Expanded(child: const SizedBox()),
-          ],
+          ),
         ),
       ),
     );

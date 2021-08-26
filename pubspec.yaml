@@ -68,6 +68,7 @@ flutter:
     - family: Montserrat
       fonts:
         - asset: lib/assets/fonts/Montserrat-Medium.ttf
+        - asset: lib/assets/fonts/Montserrat-Bold.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

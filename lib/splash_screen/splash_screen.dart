@@ -11,7 +11,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   void _completeLoading() {
     Future.delayed(const Duration(seconds: 2), () {
-      Navigator.popAndPushNamed(context, 'SignInScreen');
+      Navigator.popAndPushNamed(context, 'StartScreen');
     });
   }
 
