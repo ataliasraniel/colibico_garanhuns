@@ -1,4 +1,5 @@
 import 'package:colibico_garanhuns/constants.dart';
+import 'package:colibico_garanhuns/screens/sign_up/sign_up_one_screen/sign_up_one.dart';
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatelessWidget {
@@ -19,19 +20,7 @@ class StartScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  RichText(
-                      text: const TextSpan(children: [
-                    TextSpan(
-                        text: 'O que você procura? Escolha sua ',
-                        style: kBigHeading),
-                    TextSpan(
-                        text: 'preferência',
-                        style: TextStyle(
-                            color: kPurpleColor,
-                            fontSize: 48,
-                            fontFamily: 'Montserrat',
-                            fontWeight: FontWeight.bold)),
-                  ])),
+                  BigHeadingTwoColors(),
                   // Row(
                   //   children: [
                   //     const Icon(Icons.place_outlined, color: kPurpleColor),
@@ -45,7 +34,8 @@ class StartScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ChoiceHolder(
-                          func: () {},
+                          func: () => Navigator.pushNamed(
+                              context, SignUpScreenOne.screenId),
                           text: 'Quero contratar',
                           imgPath: 'lib/assets/images/boss.png'),
                       ChoiceHolder(
@@ -77,6 +67,27 @@ class StartScreen extends StatelessWidget {
   }
 }
 
+class BigHeadingTwoColors extends StatelessWidget {
+  const BigHeadingTwoColors({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+        text: const TextSpan(children: [
+      TextSpan(text: 'O que você procura? Escolha sua ', style: kBigHeading),
+      TextSpan(
+          text: 'preferência',
+          style: TextStyle(
+              color: kPurpleColor,
+              fontSize: 48,
+              fontFamily: 'Montserrat',
+              fontWeight: FontWeight.bold)),
+    ]));
+  }
+}
+
 class ChoiceHolder extends StatelessWidget {
   final String? text;
   final String? imgPath;
@@ -104,7 +115,7 @@ class ChoiceHolder extends StatelessWidget {
           height: 48,
           width: _size.width / 3,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: func,
             child: Text(text!),
             style: ElevatedButton.styleFrom(primary: kDetailColor),
           ),

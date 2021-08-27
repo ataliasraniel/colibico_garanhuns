@@ -16,6 +16,7 @@ const kBigHeading = TextStyle(
     fontFamily: 'Montserrat');
 
 //STYLES COMPONENTS
+
 const kSeparatorBox = SizedBox(
   height: kDefaultPadding,
 );
@@ -83,4 +84,43 @@ InputDecoration kFormStyle(String label, String hint, IconData icon) {
           const OutlineInputBorder(borderSide: BorderSide(color: kPurpleColor)),
       border: const OutlineInputBorder(
           borderSide: BorderSide(color: kDetailColor)));
+}
+
+//HEADER COM DUAS CORES
+class KBigHeadingTwoColors extends StatelessWidget {
+  final String? text;
+  final String? purpleText;
+
+  const KBigHeadingTwoColors({Key? key, this.text, this.purpleText})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+        text: TextSpan(children: [
+      TextSpan(text: text, style: kBigHeading),
+      TextSpan(
+          text: purpleText,
+          style: const TextStyle(
+              color: kPurpleColor,
+              fontSize: 48,
+              fontFamily: 'Montserrat',
+              fontWeight: FontWeight.bold)),
+    ]));
+  }
+}
+
+//P PARA PARÁGRAFO
+class PText extends StatelessWidget {
+  final String? text;
+
+  const PText({Key? key, this.text}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text!,
+      style: const TextStyle(fontFamily: 'Montserrat'),
+    );
+  }
 }
